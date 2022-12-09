@@ -1,0 +1,161 @@
+/* Start Slider */
+.slider-section {
+  background: #e1e1e1;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.main::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  z-index: -2;
+}
+.main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  z-index: -1;
+}
+
+.wrapper {
+  max-width: 1000px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px;
+  }
+}
+
+.slider {
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0px 1px 30px #0a0817;
+}
+
+.slider-block {
+  position: relative;
+}
+
+.slider-item {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  overflow: hidden;
+  transition: all 0.5s;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  .slider-item {
+    height: 460px;
+  }
+}
+.slider-item__content {
+  position: absolute;
+  bottom: 0;
+  height: 80px;
+  padding-inline: 25px;
+  padding-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .slider-item__content {
+    height: 100px;
+  }
+}
+.slider-item__title, .slider-item__description {
+  color: #fff;
+  margin: 0;
+  max-width: 100%;
+  text-shadow: 2px 2px 3px #000;
+  transition: all var(--main-transition);
+  opacity: 0;
+}
+.slider-item__title {
+  font-size: 23px;
+  margin-bottom: 10px;
+  transform: translateY(40px);
+}
+.slider-item__description {
+  font-size: 16px;
+  transform: translateY(20px);
+}
+.slider-item__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider-item-active {
+  position: relative;
+  opacity: 1;
+  pointer-events: none;
+}
+.slider-item-active .slider-item__title, .slider-item-active .slider-item__description {
+  transform: translateY(0);
+}
+.slider-item-active .slider-item__title {
+  opacity: 1;
+}
+.slider-item-active .slider-item__description {
+  opacity: 0.8;
+  transition-delay: 0.3s;
+}
+
+.slider-control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider-control__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination {
+  position: relative;
+  margin-top: -8px;
+  padding-inline: 10px;
+}
+
+.pagination-bar {
+  height: 4px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: width ease-in-out 0.3s;
+}
+
+/* End Slider *//*# sourceMappingURL=slider.css.map */
