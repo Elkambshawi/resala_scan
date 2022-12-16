@@ -1,3 +1,20 @@
+
+// Menu Bar Icon
+let menuBarBtn = document.querySelector(".menu-bar-icon");
+let listMenu = document.querySelector(".menu-list");
+let linkListMenu = document.querySelectorAll(".menu-list a")
+
+menuBarBtn.onclick = function () {
+    listMenu.classList.toggle("block");
+}
+
+linkListMenu.forEach((link) => {
+    link.addEventListener("click", function () {
+        listMenu.classList.remove("block")
+    });
+})
+
+// Card "Profile" Strucutre
 let expandBtn = document.querySelectorAll("#expand-button");
 let profileCard = document.querySelectorAll(".profile-card");
 
@@ -14,36 +31,10 @@ expandBtn.forEach((ele, indexEle) => {
 })
 
 
-let menuBarBtn = document.querySelector(".menu-bar-icon");
-let listMenu = document.querySelector(".menu-list");
-let linkListMenu = document.querySelectorAll(".menu-list a")
-
-menuBarBtn.onclick = function () {
-    listMenu.classList.toggle("block");
-}
-
-linkListMenu.forEach((link) => {
-    link.addEventListener("click", function () {
-        listMenu.classList.remove("block")
-    });
-})
-
-
+// Dark Mode Function
 let modeBtn = document.querySelector(".slid");
 const root_theme = document.querySelector(':root');
 
-console.log(root_theme);
-/* 
-    --background-image-light: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-    --background-image-dark: linear-gradient(to right top, #03071e, #2f1442, #6e004e, #ab003b, #d00000);
-    --main-color:#d00000;
-    --title-color: #1d3557;
-    --main-transition: .3s;
-    --main-padding-section: 150px 0;
-    --section-backgronund: #f8edeb;
-    --white-color: #fff;
-    --alternative-background: #e1e1e1;
-*/
 modeBtn.onclick = function () {
     this.classList.toggle("light");
     if (this.classList.contains("light") === true) {
@@ -63,31 +54,105 @@ modeBtn.onclick = function () {
     }
 }
 
+// Btn Up
+let upBtn = document.querySelector(".up-btn i")
+
+window.onscroll = function () {
+
+
+    if (scrollY > 400) {
+        upBtn.style.display = "block";
+        scrollUpOnClick();
+        
+    } else if (scrollY < 400) {
+        upBtn.style.display = "none";
+    }
+
+}
+
+function scrollUpOnClick() {
+    upBtn.onclick = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+}
+
+// Machine Type Section
+let readMoreBtn = document.querySelectorAll(".machine-desc span");
+console.log(readMoreBtn);
+function requestJson () {
+    let myRequest = new XMLHttpRequest();
+    
+    
+    myRequest.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            let machineObj = JSON.parse(this.responseText);
+            let machineObjLenghth = machineObj.length;
+            readMoreBtn.forEach((ele, index) => {
+                ele.addEventListener("click", function () {
+                    
+                    machineDetails (machineObj[index]["machine-description"]);
+                    document.addEventListener("click", function (e) {
+                        if (e.target.className == "close-btn") {
+                                e.target.parentNode.remove();
+                                document.querySelector(".popup-overlay").remove();    
+                        };
+                    })
+                }) 
+            })
+            
+        }
+    }
+    myRequest.open("GET","../js/machinetype.json", true);
+    myRequest.send();
+
+}
+
+requestJson ()
+
+function machineDetails (machineObjectDesc) {
+    let overlay = document.createElement("div");
+    let machineDesc = document.createElement("div");
+    overlay.className = "popup-overlay";
+    machineDesc.className = "machineDesc";
+    machineDesc.innerHTML = `
+    <p class="machineObjDesc"> ${machineObjectDesc} </p>
+    `
+
+    let closeBtn = document.createElement("span");
+    let closeBtnText = document.createTextNode("X");
+    closeBtn.className = "close-btn";
+    closeBtn.appendChild(closeBtnText);
+    machineDesc.appendChild(closeBtn);
+    overlay.appendChild(machineDesc);
+    document.querySelector("body").appendChild(overlay);
+}
+
+// About Us Popup Box
+let aboutUs = document.querySelector(".about");
+let aboutUsSection = document.querySelector(".about-us");
+let closeBtn = document.querySelector(".close-window");
+let popupBox = document.querySelector(".popupbox")
+aboutUs.onclick = function () {
+    aboutUsSection.style.display = "block";
+    aboutUsSection.style.opacity = "1";
+    popupBox.addEventListener("mouseover", function () {
+        closeBtn.style.transform = "rotate(180deg)"
+    })
+    popupBox.addEventListener("mouseleave", function () {
+        closeBtn.style.transform = "rotate(360deg)"
+    })
+    closeBtn.addEventListener("click", function () {
+        aboutUsSection.style.display = "none";
+        aboutUsSection.style.opacity = "1";
+    })
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Slider Section
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".slider");
     const sliderItem = document.querySelectorAll(".slider-item");

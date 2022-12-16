@@ -19,9 +19,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;500;700;900&display=swap"
         rel="stylesheet">
+        <!-- AOS Library CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;500;700;900&display=swap');
     </style>
+
     <title>مركز رسالة للأشعة | Resala Scan</title>
 </head>
 
@@ -37,7 +40,7 @@
                     <li><a href="#x-ray-category">اقسام الأشعة</a></li>
                     <li><a href="#book-inquire">الحجز والاستفسارات</a></li>
                     <li><a href="#contact-us">تواصل معنا</a></li>
-                    <li><a href="#">تعرف علينا</a></li>
+                    <li><a href="#" class="about">تعرف علينا</a></li>
                 </ul>
                 <div class="logo">
                     <img src="imgs/logo.png" alt="">
@@ -52,9 +55,18 @@
         </div>
     </header>
 
+    <section class="up">
+        <div class="container">
+          <div class="up-btn">
+            <i class="fa-solid fa-circle-up"></i>
+            <!-- <i class="fa-sharp fa-solid fa-up"></i> -->
+          </div>
+        </div>
+    </section>
+
     <section class="content">
         <div class="container">
-            <div class="content-info">
+            <div class="content-info" data-aos="zoom-out-down" data-aos-duration="1500" data-aos-delay="600">
                 <p class="welcome">مرحبا بك في</p>
                 <h1>مركز <span>رسالة</span> للأشعة</h1>
                 <p class="title-desc">والرنين المغناطيسي ورسم المخ</p>
@@ -134,7 +146,7 @@
                         <h3>وحدة الرنين المغناطيسي</h3>
                         <span>تعرف أكثر</span>
                     </div>
-                    <div class="cat-img">
+                    <div class="cat-img" data-aos="flip-right" data-aos-duration="800" data-aos-delay="300">
                         <img src="imgs/machines/mri.jpg" alt="">
                     </div>
                 </div>
@@ -143,7 +155,7 @@
                         <h3>وحدة الأشعة المقطعية</h3>
                         <span>تعرف أكثر</span>
                     </div>
-                    <div class="cat-img">
+                    <div class="cat-img" data-aos="flip-right" data-aos-duration="800" data-aos-delay="300">
                         <img src="imgs/machines/ct.jpg" alt="">
                     </div>
                 </div>
@@ -152,7 +164,7 @@
                         <h3>وحدة السونار</h3>
                         <span>تعرف أكثر</span>
                     </div>
-                    <div class="cat-img">
+                    <div class="cat-img" data-aos="flip-up" data-aos-duration="800" data-aos-delay="300">
                         <img src="imgs/machines/us.jpg" alt="">
                     </div>
                 </div>
@@ -161,7 +173,7 @@
                         <h3>وحدة الأشعة العادية</h3>
                         <span>تعرف أكثر</span>
                     </div>
-                    <div class="cat-img">
+                    <div class="cat-img" data-aos="flip-left" data-aos-duration="800" data-aos-delay="300">
                         <img src="imgs/machines/x-ray.jpg" alt="">
                     </div>
                 </div>
@@ -170,7 +182,7 @@
                         <h3>وحدة رسم المخ الكهربي</h3>
                         <span>تعرف أكثر</span>
                     </div>
-                    <div class="cat-img">
+                    <div class="cat-img" data-aos="flip-left" data-aos-duration="800" data-aos-delay="300">
                         <img src="imgs/machines/eeg.jpg" alt="">
                     </div>
                 </div>
@@ -181,7 +193,7 @@
     <section class="book-inquire section" id="book-inquire">
         <h2 class="title-section" id="title-section">للحجز والاستفسار</h2>
         <div class="container">
-            <div class="form">
+            <div class="form" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="300">
                 <input type="text" id="username-input" placeholder="Your Name">
                 <input type="text" id="subject-input" placeholder="Subject">
                 <input type="number" id="phone-input" placeholder="Your Phone">
@@ -189,24 +201,23 @@
                 <textarea name="textarea" id="textarea" placeholder="Tell Us About Your Needs"></textarea>
                 <button class="send">إرسال</button>
             </div>
-            <div class="img">
+            <div class="img" data-aos="zoom-in-down" data-aos-duration="800" data-aos-delay="300">
                 <img src="imgs/askme.png" alt="">
             </div>
         </div>
     </section>
 
     <section class="four-d section">
-        <div class="overlay"></div>
         <h2 class="title-section" id="title-section">الـ 4D</h2>
         <div class="container">
             <div class="advertising">
-                <p>شوفي طفلك بكل وضوح بتقنية الـ4D</p>
-                <h3>مع د. فاطمة خير</h3>
-                <div class="img-dr">
+                <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="300">شوفي طفلك بكل وضوح بتقنية الـ4D</p>
+                <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="300">مع د. فاطمة خير</h3>
+                <div class="img-dr" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="200">
                     <img src="imgs/4D/Dr.fatma.png" alt="">
                 </div>
             </div>
-            <div class="evaluation">
+            <div class="evaluation" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="300">
                 <h3>قالوا عنها</h3>
                 <div class="evaution-imgs">
                     <div class="evaluate-img">
@@ -233,9 +244,9 @@
         <h2 class="title-section">الهيكل التنظيمى</h2>
         <div class="container">
             <div class="profiles">
-                <h3 class="structure-title-section">الإدارة العليا</h3>
+                <h3 class="structure-title-section" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="300">الإدارة العليا</h3>
                 <div class="profile-section">
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/female-img.jpg" alt="">
                         </div>
@@ -262,7 +273,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/Mr-hassan.jpg" alt="">
                         </div>
@@ -289,7 +300,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/mr-mohamedateya.jpg" alt="">
                         </div>
@@ -316,9 +327,9 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="structure-title-section">وحدة السونار</h3>
+                <h3 class="structure-title-section" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="300">وحدة السونار</h3>
                 <div class="profile-section">
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/female-img.jpg" alt="">
                         </div>
@@ -344,7 +355,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/Dr.fatma.png" alt="">
                         </div>
@@ -371,7 +382,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/dr.ahmedEssam.jpg" alt="">
                         </div>
@@ -397,7 +408,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/female-img.jpg" alt="">
                         </div>
@@ -424,10 +435,10 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="structure-title-section">وحدة الرنين والمقطعية والعادية</h3>
+                <h3 class="structure-title-section" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="300">وحدة الرنين والمقطعية والعادية</h3>
                 <div class="profile-section">
 
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/mr-hegag.jpg" alt="">
                         </div>
@@ -453,7 +464,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/mr-mrwan.jpg" alt="">
                         </div>
@@ -479,7 +490,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/mr-osama.jpg" alt="">
                         </div>
@@ -505,7 +516,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/female-img.jpg" alt="">
                         </div>
@@ -531,7 +542,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/female-img.jpg" alt="">
                         </div>
@@ -558,9 +569,9 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="structure-title-section">وحدة رسم المخ الكهربائي</h3>
+                <h3 class="structure-title-section" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="300">وحدة رسم المخ الكهربائي</h3>
                 <div class="profile-section">
-                    <div class="profile-card">
+                    <div class="profile-card" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
                         <div class="cover">
                             <img src="imgs/Characters/female-img.jpg" alt="">
                         </div>
@@ -595,20 +606,18 @@
         <h2 class="title-section">تواصل معنا</h2>
         <div class="container">
             <div class="branches">
-                <div class="branch">
+                <div class="branch" data-aos="zoom-in-left" data-aos-duration="800" data-aos-delay="300">
                     <h3 class="branch-name">فرع الفيوم</h3>
                     <p class="address">محافظة الفيوم - مركز الفيوم - العبودي - بجوار شارع الاصلاح الزرعي ومطعم العمدة -
                         برج الحصري</p>
                     <div class="google-map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217.43413821214392!2d30.854836432822488!3d29.313253427690505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145978debb64b797%3A0x7e021501022a4b3c!2sBIM!5e0!3m2!1sar!2ssa!4v1670596059053!5m2!1sar!2ssa"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1229.9910320883778!2d30.854271299740734!3d29.313435668291792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1459792c9786a5b7%3A0x219075425a0cbcb2!2z2YXYsdmD2LIg2LHYs9in2YTZhyDZhNmE2KPYtNi52Kk!5e0!3m2!1sar!2seg!4v1670960993344!5m2!1sar!2seg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
                     </div>
                     <div class="telephone">
                         <div class="whats-app">
                             <img src="imgs/whatsapp-icon.png" alt="">
-                            <span>01032837070</span>
+                            <a href="https://wa.me/+201032837070?text=مرحبا بك في مركز رسالة للأشعة فرع الفيوم، كيف يمكنني مساعدتك؟"  target="_blank"><span>01032837070</span></a>
                         </div>
                         <div class="call">
                             <i class="fa-solid fa-phone-volume"></i>
@@ -616,19 +625,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="branch">
+                <div class="branch" data-aos="zoom-in-right" data-aos-duration="800" data-aos-delay="300">
                     <h3 class="branch-name">فرع سنورس</h3>
                     <p class="address">محافظة الفيوم - مركز سنورس - شارع مبارك - بجوار بيت العيلة - امام موقف طامية</p>
                     <div class="google-map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217.43413821214392!2d30.854836432822488!3d29.313253427690505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145978debb64b797%3A0x7e021501022a4b3c!2sBIM!5e0!3m2!1sar!2ssa!4v1670596059053!5m2!1sar!2ssa"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d365.34249920505397!2d30.867712626584723!3d29.407067638509236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145977a21b7d466f%3A0x4ecba182906c32f3!2z2YXYsdmD2LIg2LHYs9in2YTYqSDZhNmE2KPYtNi52Kk!5e0!3m2!1sar!2seg!4v1670960937431!5m2!1sar!2seg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="telephone">
                         <div class="whats-app">
                             <img src="imgs/whatsapp-icon.png" alt="">
-                            <span>01090208058</span>
+                            <a href="https://wa.me/+201090208058?text=مرحبا بك في مركز رسالة للأشعة فرع سنورس، كيف يمكنني مساعدتك؟"  target="_blank"><span>01090208058</span></a>
                         </div>
                         <div class="call">
                             <i class="fa-solid fa-phone-volume"></i>
@@ -640,6 +646,31 @@
             <div class="facebook-page">
                 <img src="imgs/facebook.png" alt="">
                 <p>يمكنكم زيارة صفحتنا على الفيس بوك (امسح الباكورد)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us section">
+        <div class="overlay">
+            <div class="close-window">X</div>
+            <div class="popupbox">
+                <h3>نحن مركز رساله للأشعة والرنين المغناطيسي ورسم المخ</h3>
+                <p>تم إنشاء المركز في عام 2012، نسعى جاهدين على مدار ال10 سنوات الماضية حتى اليوم على تقديم خدمة متميزة
+                    لجميع المرضى وهدفنا دائماء هو تقديم افضل خدمة واعلى جودة في الاشعة والتقارير بأقل تكاليف ممكنة وتحدي
+                    الغلاء الزائد.<br /> نسعى دائما للتطور الفكري والعملي وان نغطي اكبر قدر من فروع الفيوم، لذلك تم فتح
+                    فرع جديد لنا في بداية عام 2021 فرع اخر في محافظة الفيوم.<br /> نقدم العديد من خدمات الأشعة وهي
+                    الآتي:-</p>
+                <p>1. اشعة الرنين المغناطيسي على جميع اجزاء الجسم.</p>
+                <p>2. احدث اجهزة الاشعة المقطعية متتعدة المقاطع على جميع اجزاء الجسم بصبغة وبدون صبغة.</p>
+                <p>3. وحدة السونار وفحوصات النساء والـ4D والدوبلر الملون ودوبلر الحمل.</p>
+                <p>4. فحص الإيكو على القلب.</p>
+                <p>5. وحدة الأشعة العادية بتقنية الـCR على جميع اجزاء الجسم.</p>
+                <p>6. فحوصات الصبغة على الرحم بدون تخدير.</p>
+                <p>7. رسم مخ كهربائي لجميع الأعمار.</p>
+                <p>8. جميع الفحوصات النسائية يتم عملها بواسطة طبيبات.</p>
+                <div class="image">
+                    <img src="imgs/logo-3.png" alt="">
+                </div>
             </div>
         </div>
     </section>
@@ -657,6 +688,10 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="js/main.js"></script>
 </body>
 

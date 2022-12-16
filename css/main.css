@@ -25,6 +25,7 @@ html {
 }
 a {
     text-decoration: none;
+    color: black;
 }
 
 ul {
@@ -99,6 +100,48 @@ body {
     border: 2px solid white;
     transition-delay: .5s;
     bottom: 8px;
+}
+
+.popup-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 60%);
+    z-index: 1000;
+}
+
+.machineDesc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    padding: 40px;
+    border-radius: 6px;
+    background-color: var(--white-color);
+    color: var(--title-color);
+    text-align: center;
+    line-height: 1.9;
+}
+
+.machineDesc .close-btn {
+    content: "X";
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    font-size: 22px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    z-index: 1003;
+    transition: .5s;
+    cursor: pointer;
 }
 /* Start Header */
 header {
@@ -227,6 +270,7 @@ header nav .dark-mode .switch .slid::before {
 header nav .dark-mode .switch span.light::before {
     transform: translateX(20px);
 }
+
 @media (max-width: 847px) {
     header .container nav {
         justify-content: space-between;
@@ -258,6 +302,17 @@ header nav .dark-mode .switch span.light::before {
     }
 }
 /* End Header */
+.up .container .up-btn i {
+    font-size: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    color: var(--main-color);
+    cursor: pointer;
+    z-index: 1100;
+    animation: move-up-down 1s infinite linear;
+    display: none;
+}
 
 /* Start Content */
 .content {
@@ -660,16 +715,6 @@ header nav .dark-mode .switch span.light::before {
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgb(0 0 0 / 40%);
-    z-index: 1;
-} */
 
 .four-d .container{
     display: flex;
@@ -1042,6 +1087,10 @@ h3.structure-title-section:hover {
     transition: var(--main-transition);
 }
 
+.contuct-us .branches .branch .telephone .whats-app {
+    animation: scale-in-out 1s infinite ease-in-out;
+}
+
 .contuct-us .branches .branch .telephone .whats-app img {
     width: 35px;
 }
@@ -1075,9 +1124,8 @@ h3.structure-title-section:hover {
     border: 2px solid var(--white-color);
 }
 
-.contuct-us .branches .branch .telephone .whats-app:hover,
 .contuct-us .branches .branch .telephone .call:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 .contuct-us .facebook-page {
@@ -1115,6 +1163,90 @@ h3.structure-title-section:hover {
     }
 }
 /* End Contact Us */
+
+/* Start about-us */
+.about-us {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: none;
+    opacity: 0;
+}
+
+.about-us .overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0 0 0 / 50%);
+    z-index: 1000;
+}
+
+.about-us .popupbox {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: calc(100vh - 100px);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: var(--white-color);
+    z-index: 1001;
+    padding: 50px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.about-us .close-window {
+    position: fixed;
+    right: 24%;
+    top: 3%;
+    font-size: 22px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    z-index: 1003;
+    transition: .5s;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .about-us .close-window {
+        right: 7%;
+        top: 4%;
+    } 
+}
+.about-us .popupbox h3 {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--main-color);
+    text-decoration: underline;
+    letter-spacing: -1px;
+    margin: 20px;
+    line-height: 1.5;
+}
+
+.about-us .popupbox p {
+    text-align: right;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.about-us .popupbox .image {
+    width: 200px;
+    margin: auto;
+}
+
+.about-us .popupbox .image img {
+    width: 100%;
+}
+/* End about-us */
 
 /* Start Footer */
 .footer {
@@ -1250,5 +1382,24 @@ h3.structure-title-section:hover {
     }
     90% {
         transform: translateY(8px);
+    }
+}
+
+@keyframes scale-in-out {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes move-up-down {
+    0% , 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
     }
 }
