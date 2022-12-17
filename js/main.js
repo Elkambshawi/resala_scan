@@ -104,7 +104,7 @@ function requestJson () {
             
         }
     }
-    myRequest.open("GET","../js/machinetype.json", true);
+    myRequest.open("GET","../../resala_scan/js/machinetype.json", true);
     myRequest.send();
 
 }
