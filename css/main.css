@@ -1105,7 +1105,8 @@ h3.structure-title-section:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
-    transition: var(--main-transition);
+    transform: scale(1.1);
+    transition: transform var(--main-transition);
 }
 
 .contuct-us .branches .branch .telephone .whats-app {
@@ -1408,11 +1409,11 @@ h3.structure-title-section:hover {
 
 @keyframes scale-in-out {
     0%, 100% {
-        transform: scale(1);
+        transform: scale(1.1);
     }
 
     50% {
-        transform: scale(1.2);
+        transform: scale(1);
     }
 }
 
