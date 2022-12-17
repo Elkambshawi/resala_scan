@@ -194,11 +194,26 @@
         <h2 class="title-section" id="title-section">للحجز والاستفسار</h2>
         <div class="container">
             <div class="form" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="300">
-                <input type="text" id="username-input" placeholder="Your Name">
-                <input type="text" id="subject-input" placeholder="Subject">
-                <input type="number" id="phone-input" placeholder="Your Phone">
-                <input type="email" id="email-input" placeholder="Email">
-                <textarea name="textarea" id="textarea" placeholder="Tell Us About Your Needs"></textarea>
+                <input type="text" id="username-input" placeholder="الاسم ثلاثي">
+                <input type="text" id="subject-input" placeholder="عنوان الموضوع">
+                <input type="number" id="phone-input" placeholder="رقم الهاتف">
+                <input type="email" id="email-input" placeholder="الإيميل">
+                <div class="brunch-select div-form">
+                    <label for="brunch">الفرع</label>
+                    <select name="brunch" id="brunch">
+                        <option value="fayoum">فرع الفيوم</option>
+                        <option value="sinurus">فرع سنورس</option>
+                    </select>   
+                </div>
+                <div class="inquire-type div-form">
+                    <label for="type">نوع الطلب</label>
+                    <select name="type" id="type">
+                        <option value="book">حجز</option>
+                        <option value="inquire">استفسار</option>
+                        <option value="complaint">شكوى</option>
+                    </select>
+                </div>
+                <textarea name="textarea" id="textarea" placeholder="أخبرنا عن احتياجاتك"></textarea>
                 <button class="send">إرسال</button>
             </div>
             <div class="img" data-aos="zoom-in-down" data-aos-duration="800" data-aos-delay="300">
@@ -688,6 +703,10 @@
         </div>
     </footer>
 
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
