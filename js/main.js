@@ -59,7 +59,6 @@ let upBtn = document.querySelector(".up-btn i")
 
 window.onscroll = function () {
 
-
     if (scrollY > 400) {
         upBtn.style.display = "block";
         scrollUpOnClick();
@@ -96,8 +95,8 @@ function requestJson () {
                     machineDetails (machineObj[index]["machine-description"]);
                     document.addEventListener("click", function (e) {
                         if (e.target.className == "close-btn") {
-                                e.target.parentNode.remove();
-                                document.querySelector(".popup-overlay").remove();    
+                            e.target.parentNode.remove();
+                            document.querySelector(".popup-overlay").remove();    
                         };
                     })
                 }) 
@@ -210,3 +209,76 @@ document.addEventListener("DOMContentLoaded", function () {
     paginationProgress();
     setActivationOfSlider();
 }, false);
+
+
+// Book Inquire
+let submitBtn = document.querySelector(".send");
+submitBtn.onclick = function (e) {
+    e.preventDefault();
+    let usernameInput = document.getElementById("username-input");
+    let subjectInput = document.getElementById("subject-input");
+    let phoneInput = document.getElementById("phone-input");
+    let emailInput = document.getElementById("email-input");
+    let textarea = document.getElementById("textarea");
+    let brunch = document.getElementById("brunch");
+    let inquireType = document.getElementById("type");
+    let body = `
+    <br />
+    الاسم: ${usernameInput.value}
+    <br />
+    عنوان الموضوع : ${subjectInput.value}
+    <br />
+    رقم التليفون : ${phoneInput.value}
+    <br />
+    الإيميل : ${emailInput.value}
+    <br />
+    الفرع: ${selectOption(brunch)}
+    <br />
+    نوع الرسالة : ${selectOption(inquireType)}
+    <br />
+    محتوى الرسالة : ${textarea.value}
+    <br />
+    `
+    if (usernameInput.value === "" || subjectInput.value === "" || phoneInput.value === "" || textarea.value === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'خطأ...',
+            text: 'خطأ، يرجى التأكد من ملئ البيانات!',
+        });
+        } else {
+            Email.send({
+                SecureToken : "99c047cf-18e0-46fa-aa20-597539c10318",
+                To : 'elnegmabdo@gmail.com',
+                From : "elnegmabdo@gmail.com",
+                Subject : "Message From Resala Website",
+                Body : body
+            }).then(
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'success',
+                    title: 'تم إرسال الرسالة بنجاح',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            );
+            usernameInput.value = '';
+            subjectInput.value = '';
+            phoneInput.value = '';
+            emailInput.value = '';
+            textarea.value = '';
+        }
+    
+}
+
+
+function selectOption(select) {
+    let selectLenghth = select.length;
+    let selected = Array.from(select).filter(ele => ele.selected === true);
+    // for (let i = 0; i < selectLenghth; i++) {
+    //     if (select[i].selected === true) {
+    //         selected = select[i].textContent;
+    //         console.log(selected);
+    //     }
+    // }
+    return selected[0].textContent;
+}
