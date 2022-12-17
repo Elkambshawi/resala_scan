@@ -626,7 +626,7 @@ header nav .dark-mode .switch span.light::before {
 }
 
 .book-inquire .container .form input,
-.book-inquire .container .form textarea  {
+.book-inquire .container .form textarea {
     padding: 20px;
     color: var(--main-color);
     border-radius: 6px;
@@ -635,6 +635,27 @@ header nav .dark-mode .switch span.light::before {
     font-size: 16px;
     margin-bottom: 10px;
     transition: var(--main-transition);
+}
+
+.book-inquire .container .form .div-form {
+    width: 100%; 
+    display: inline-block;
+    color: var(--white-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.book-inquire .container .form .div-form label {
+    font-size: 18px;
+}
+
+.book-inquire .container .form .div-form select {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 10px 0;
 }
 
 .book-inquire .container .form input::placeholder,
